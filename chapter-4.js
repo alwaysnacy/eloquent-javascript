@@ -72,7 +72,7 @@ function arrayToList2(arr) {
     return listt;
 }
 
-let arr = [1, 2, 3]
+arr = [1, 2, 3]
 console.log(arrayToList2(arr))
 
 // convert a list to Array
@@ -135,4 +135,24 @@ function recursiveNth(listt, n) {
 }
 
 console.log(recursiveNth(listt1, 3))
+
+// Exercise 5: Deep Comparison
+function deepEqual(el1, el2) {
+    if (typeof(el1) == typeof(el2) && typeof(el1) == 'object') {
+        for (let e1 of Object.keys(el1)) {
+            if (!Object.keys(el2).includes(e1)) {
+                return false;
+            } else {
+                if (el2[e1] !== el1[e1]) {
+                    return false;
+                }
+            }
+        } 
+    } else if (el1 !== el2) {
+        return false;
+    }
+    return true;
+}
+
+console.log(deepEqual({na: "Trang", age: 12}, 2))
 
